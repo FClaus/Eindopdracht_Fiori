@@ -1,0 +1,163 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange480_12120"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Product Details"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				 <Label
+                    id="ProductCategory"
+                    displayOnly="true"
+                    wrapping="true"
+                    text="Product Category:" />
+                            <ComboBox width="50%" selectedKey="{Category}">
+                                <items>
+                                    <core:Item text="Laptops" key="Laptops"/>
+                                    <core:Item text="Accessories" key="Accessories"/>
+                                    <core:Item text="Tablets" key="Tablets"/>
+                                    <core:Item text="Flat Screen Monitors" key="Flat Screen Monitors"/>
+                                    <core:Item text="Printers" key="Printers"/>
+                                    <core:Item text="Multifunction Printers" key="Multifunction Printers"/>
+                                    <core:Item text="Mice" key="Mice"/>
+                                    <core:Item text="Keyboards" key="Keyboards"/>
+                                    <core:Item text="Mousepads" key="Mousepads"/>
+                                    <core:Item text="Computer System Accessories" key="Computer System Accessories"/>
+                                    <core:Item text="Graphic Cards" key="Grapic Cards"/>
+                                    <core:Item text="Scanners" key="Scanners"/>
+                                    <core:Item text="Speakers" key="Speakers"/>
+                                    <core:Item text="Software" key="Software"/>
+                                    <core:Item text="Telecommunications" key="Telecommunications"/>
+                                    <core:Item text="PCs" key="PCs"/>
+                                    <core:Item text="Smartphones and Tablets" key="Smartphones and Tablets"/>
+                                    <core:Item text="Flat Screens" key="Flat Screens"/>
+                                    <core:Item text="Servers" key="Servers"/>
+                                    <core:Item text="Desktop Computer" key="Desktop Computer"/>
+                                    <core:Item text="Flat Screen TVs" key="Flat Screen TVs"/>
+                                </items>
+                            </ComboBox>
+                            <Label
+                                id="SupplierId"
+                                displayOnly="true"
+                                wrapping="true"
+                                text="Supplier ID" />
+                            <ComboBox width="50%" id="supplier" selectedKey="{path: 'SupplierId', type: 'sap.ui.model.type.Integer'}">
+                                <items>
+                                    <core:Item text="Alpha Printers" key="1"/>
+                                    <core:Item text="Brainsoft" key="2"/>
+                                    <core:Item text="Fasttech" key="3"/>
+                                    <core:Item text="Oxynum" key="4"/>
+                                    <core:Item text="Printer for All" key="5"/>
+                                    <core:Item text="Red Point Stores" key="6"/>
+                                    <core:Item text="Smartcards" key="7"/>
+                                    <core:Item text="Speaker Experts" key="8"/>
+                                    <core:Item text="Technocom" key="9"/>
+                                    <core:Item text="Titanium" key="10"/>
+                                    <core:Item text="Ultrasonic United" key="11"/>
+                                    <core:Item text="Very Best Screens" key="12"/>
+                                </items>
+                            </ComboBox>
+                            <Label
+                                id="ProductName"
+                                displayOnly="true"
+                                wrapping="true"
+                                text="Product Name" />
+                            <Input value="{Name}" />
+                            <Label
+                                id="ProductDescription"
+                                displayOnly="true"
+                                wrapping="true"
+                                text="Product Description"/>
+                            <TextArea rows="4" value="{Description}"/>
+                            <Label
+                                id="ProductPrice"
+                                displayOnly="true"
+                                wrapping="true"
+                                text="Price" />
+                            <Input value="{Price}" description="EUR"/>
+                            <Label
+                                id="ProductUOM"
+                                displayOnly="true"
+                                wrapping="true"
+                                text="Unit Of Measure" />
+                            <ComboBox width="50%" selectedKey="{Uom}">
+                                <core:Item text="Pieces" key="PC" />
+                            </ComboBox>
+                            <Label
+                                id="ProductWeight"
+                                displayOnly="true"
+                                wrapping="true"
+                                text="Weigth" />
+                            <Input value="{Weight}" width="100%" />
+                            <SegmentedButton id="SB1" selectionChange="onSelectionChange" selectedKey="{WeightUnit}">
+                                <items>
+                                    <SegmentedButtonItem text="Kilograms" key="KG"/>
+                                    <SegmentedButtonItem text="Grams" key="G"/>
+                                </items>
+                        </SegmentedButton>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm id="SimpleFormChange480_12120-2"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Dimensions"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false">
+			<f:content>
+                <Label
+                    id="Width"
+                    displayOnly="true"
+                    wrapping="true"
+                    text="Width" />
+                <Input width="25%" value="{Width}"/>
+                <Label
+                    id="Depth"
+                    displayOnly="true"
+                    wrapping="true"
+                    text="Depth" />
+                <Input width="25%" value="{Depth}"/>
+                <Label
+                    id="Heigth"
+                    displayOnly="true"
+                    wrapping="true"
+                    text="Height" />
+                <Input width="25%" value="{Height}" />
+                <Label
+                    id="Unit"
+                    displayOnly="true"
+                    wrapping="true"
+                    text="Unit" />
+                <ComboBox width="40%" selectedKey="{DimUnit}">
+                    <core:Item text="Centimeter" key="CM" />
+                </ComboBox>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>

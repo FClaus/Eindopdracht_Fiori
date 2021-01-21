@@ -1,0 +1,136 @@
+<mvc:View
+	controllerName="be.ap.Product.controller.Detail"
+	xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:mvc="sap.ui.core.mvc">
+
+    <semantic:FullscreenPage id="detailView" title="Product details">
+
+                    <semantic:customFooterContent>
+						<Button id="save" visible="false" type="Emphasized" text="Save" press="handleSavePress"/>
+                        <Button id="cancel" visible="false" text="Cancel" press="handleCancelPress"/>
+                        <Button id="edit" icon="sap-icon://edit" text="Edit" press="handleEditPress"/>
+                        <Button id="delete" type="Reject" icon="sap-icon://delete" text="Delete" press="onDelete"/>
+					</semantic:customFooterContent>
+
+                    <semantic:content>
+                        <ObjectHeader                           
+                                title="{Name}"
+                                icon="sap-icon://product"
+                                backgroundDesign="Solid"
+                                number="{
+                                    path: 'Price',
+                                    formatter: '.formatter.currencyValue'
+                                }"
+                                numberUnit="{Currency}">
+                                <ObjectAttribute id="productId" text="{ProductId}"/>
+                                    <statuses>
+                                        <ObjectStatus
+                                            text="{= ${Status} === 1 ? 'validated' : ${Status} === 2 ? 'rejected' :'to be validated'}"
+                                            state="{
+                                                path: 'Status',
+                                                formatter: '.formatter.status'
+                                            }" />
+                                    </statuses>
+                        </ObjectHeader>
+                    </semantic:content>
+
+                    <semantic:SemanticPage id='page'>
+                     </semantic:SemanticPage>
+                    
+			</semantic:FullscreenPage>
+
+	<!-- 
+        <semantic:SemanticPage
+		id="detailPage"
+		busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}">
+		<semantic:titleHeading>
+			<Title
+				text="{Name}"
+				level="H2"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectAttribute title="{i18n>priceTitle}"/>
+			<ObjectNumber
+				id="objectHeaderNumber"
+				number="{
+					path: 'ProductId',
+					formatter: '.formatter.currencyValue'
+				}"
+				unit="{WeightUnit}"
+			/>
+		</semantic:headerContent>
+		<semantic:content>
+			<Table
+				id="lineItemsList"
+				width="auto"
+				items="{Unknown}"
+				updateFinished=".onListUpdateFinished"
+				noDataText="{i18n>detailLineItemTableNoDataText}"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							id="lineItemsTitle"
+							text="{detailView>/lineItemListTitle}"
+							titleStyle="H3"
+							level="H3"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="{i18n>detailLineItemTableIDColumn}"/>
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						hAlign="End">
+						<Text text="{i18n>detailLineItemTableUnitNumberColumn}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier
+								title="{Unknown}"
+								text="{Unknown}"/>
+							<ObjectNumber
+								number="{
+									path: 'Unknown',
+									formatter: '.formatter.currencyValue'
+								}"
+								unit="{Unknown}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction
+				id="shareEmail"
+				press=".onSendEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:closeAction>
+			<semantic:CloseAction
+					id="closeColumn"
+					press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction
+					id="enterFullScreen"
+					visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+					press=".toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction
+					id="exitFullScreen"
+					visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+					press=".toggleFullScreen"/>
+		</semantic:exitFullScreenAction>
+
+	</semantic:SemanticPage>
+    -->
+</mvc:View>
